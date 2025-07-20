@@ -1,0 +1,9 @@
+/* Aqui se definen las custom properties usadas habitualmente */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --main-color-app: #3F3C9C;
+    --white-app-color: #F8F8FF;
+    --placehoder-color: #A9A9A9;
+    --main-font: "Inter", sans-serif;
+}
