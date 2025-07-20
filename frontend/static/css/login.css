@@ -1,0 +1,70 @@
+/* Diseno pagina de login */
+/* rem: para font-size; em: para padding/margin */
+@import url("variables.css");
+
+body {
+    margin: 0;
+    min-height: 150vh;
+    font-family: var(--main-font);
+}
+
+.header-login {
+    display: grid;
+    background-color: var(--main-color-app);
+    color: var(--white-app-color);
+    height: 270px;
+    align-items: center;
+}
+
+.header-login h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2.845425rem;
+}
+
+.login-body h2 {
+    margin: 1.811em 0;
+    font-size: 2.3125rem;
+    text-align: center;
+}
+
+.login-body p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.login-body p a {
+    color: var(--main-color-app);
+}
+
+.login-formulario {
+    display: grid;
+    padding: 0 2.5em;
+}
+
+.login-formulario input::placeholder {
+    font-size: 1rem;
+    font-family: var(--main-font);
+    color: var(--placehoder-color);
+}
+
+.login-formulario input {
+    margin-bottom: 0.9375em;
+    font-size: 1rem;
+    height: 2.875em;
+    padding-left: 1em;
+    border-radius: 40px;
+    border-width: 1px;
+    border-color: var(--main-color-app);
+}
+
+.login-formulario .login {
+    margin: 1.875em 0 0 0;
+    border-width: 0px;
+    background-color: var(--main-color-app);
+    font-family: var(--main-font);
+    font-weight: bold;
+    color: var(--white-app-color);
+}
+
+
