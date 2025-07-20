@@ -1,0 +1,7 @@
+# Este gitignore esta siendo construido a partir de la siguiente plantilla: 
+#
+#        https://github.com/github/gitignore/blob/main/Node.gitignore
+#
+
+# Carpetas de dependencias
+node_modules/
