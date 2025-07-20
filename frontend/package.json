@@ -1,0 +1,16 @@
+{
+  "name": "gestion-gastos-frontend",
+  "version": "1.0.0",
+  "description": "Frontend de la aplicacion de gestion de gastos",
+  "license": "ISC",
+  "author": "Ricardo Diaz",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "liveserver": "live-server ./static/"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
