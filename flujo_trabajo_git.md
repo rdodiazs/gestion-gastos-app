@@ -1,10 +1,11 @@
 
-# Convención de nombres de ramas
+# Flujo de trabajo en Git.
 
-Esta es una documentación que generé para guiarme sobre cómo escribir el nombre de las ramas para este proyecto, para hacerlo de forma clara, consistente y sostenible en el tiempo, siguiendo buenas prácticas que suelen usarse en la industria.
+Esta documentación la generé para guiarme sobre cómo escribir el nombre de las ramas así como los mensajes de commit en este proyecto, para hacerlo de forma clara, consistente y sostenible en el tiempo, siguiendo buenas prácticas que suelen usarse en la industria.
 
+## Convención de nombres de ramas
 
-## Formato general
+### Formato general
 
 ```
 <tipo>/<área>/<detalle>
@@ -17,7 +18,7 @@ Donde:
 - `<detalle>`: Descripción clara y específica de la tarea
 
 
-## Tipos de rama (`<tipo>`)
+### Tipos de rama (`<tipo>`)
 
 | Tipo      | Uso                                                  |
 |-----------|------------------------------------------------------|
@@ -29,7 +30,7 @@ Donde:
 | `hotfix`  | Correcciones urgentes en producción (para `main`)    |
 
 
-## Áreas del proyecto (`<área>`)
+### Áreas del proyecto (`<área>`)
 
 | Área      | Descripción                                                |
 |-----------|------------------------------------------------------------|
@@ -37,9 +38,9 @@ Donde:
 | `backend` | Código del servidor: API, base de datos, lógica de negocio |
 
 
-## ✏️ Ejemplos de nombres válidos
+### Ejemplos de nombres válidos
 
-### Frontend
+#### Frontend.
 
 ```
 feature/frontend/static-responsive/login
@@ -49,7 +50,7 @@ refactor/frontend/components/input-field
 chore/frontend/assets/favicon-update
 ```
 
-### Backend
+#### Backend.
 
 ```
 feature/backend/api/auth
@@ -58,4 +59,26 @@ fix/backend/api/token-expiry
 refactor/backend/models/user-schema
 chore/backend/env/example-update
 ```
+
+## Convención de mensajes de commit.
+
+### Estructura de los mensajes.
+
+Debe seguir el siguiente formato:
+
+```
+<tipo>(<área opcional>): <resumen del cambio>
+
+<descripción opcional más detallada>
+```
+
+### Explicación.
+
+| Parte     | Ejemplo                      | Descripción                                                                 |
+| --------- | ---------------------------- | --------------------------------------------------------------------------- |
+| `<tipo>`  | `feat`, `fix`, `refactor`    | Tipo de cambio (siguiendo convención tipo `Conventional Commits`)           |
+| `<área>`  | `login`, `api`, `form`, etc. | Parte afectada (opcional pero útil)                                         |
+| `resumen` | "Agrega formulario de login" | Voz activa, 50 caracteres máx                                               |
+| `cuerpo`  | Más contexto si hace falta   | Detalla decisiones, motivación o consecuencias (72 caracteres máx por línea)|
+
 
