@@ -1,0 +1,93 @@
+/* Diseno de vista 'crear cuenta' */
+/* rem: para font-size; em: para padding/margin */
+@import url("variables.css");
+
+body {
+    margin: 0;
+    min-height: 200vh;
+    font-family: var(--main-font);
+}
+
+/* Header */
+
+.header-page {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    background-color: var(--main-color-app);
+    color: var(--white-app-color);
+    height: 19.375em;
+}
+
+.left-arrow svg {
+    height: 3.4375em;
+    width: 3.4375em;
+    padding: 0.625em 0 0 0.625em;
+}
+
+.left-arrow path {
+    stroke: var(--white-app-color);
+}
+
+.header-page h1 {
+    display: grid;
+    margin: 0;
+    font-size: 2.875em;
+    text-align: center;
+    align-items: center;
+    grid-area: 2 / 1 / 4 / 2;
+}
+
+
+/* Body */
+
+.crear-cuenta-body {
+    margin: 9.375em 1.25em 0 1.25em;
+}
+
+.crear-cuenta-body h2 {
+    font-size: 2.6875rem;
+    margin: 0 0 2.6163em 0; /*112.5px*/
+    text-align: center;
+}
+
+.crear-cuenta-body form {
+    display: grid;
+}
+
+.crear-cuenta-body form input, .crear-cuenta-body form button {
+    height: 3.125em;
+    font-size: 1rem;
+    font-family: var(--main-font);
+    border-radius: 25px;
+}
+
+.crear-cuenta-body form input {
+    border: solid 1px var(--main-color-app);
+    padding-left: 15px;
+    background-color: var(--white-app-color);
+}
+
+.crear-cuenta-body form input:not(#email) {
+    margin-bottom: 1.25em;
+}
+
+.crear-cuenta-body form input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.crear-cuenta-body form button {
+    margin-top: 3.75em;
+    font-weight: bold;
+    color: var(--white-app-color);
+    border: 0;
+    background-color: var(--main-color-app);
+}
+
+.crear-cuenta-body p {
+    text-align: center;
+}
+
+.crear-cuenta-body p a {
+    color: var(--main-color-app);
+}
+
