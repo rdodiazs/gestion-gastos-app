@@ -3,6 +3,8 @@
 
 :root {
     --main-color-app: #3F3C9C;
+    --main-light-color: #8D7FE9;
+    --button-app-color: #D14D49;
     --white-app-color: #F8F8FF;
     --placeholder-color: #A9A9A9;
     --main-font: "Inter", sans-serif;
