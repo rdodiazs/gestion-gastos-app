@@ -1,0 +1,92 @@
+@import url("variables.css");
+
+body {
+    margin: 0;
+    font-family: var(--main-font);
+    box-sizing: content-box;
+}
+
+/*
+=================================
+            Header
+=================================
+*/
+
+.main-header {
+    background-color: var(--main-color-app);
+    padding: 0 1.25em;
+}
+
+.main-header h1, .main-header a {
+    color: var(--white-app-color);
+}
+
+.main-header h1 {
+    text-align: center;
+    font-size: 2.845425rem;
+    margin: 0 1.3em;
+    padding: 0.4em 0 1.5625em;
+}
+
+.main-header svg {
+    height: 80px;
+    width: 80px;
+    margin-top: 1.875em;
+}
+
+.main-header svg path {
+    stroke: var(--white-app-color);
+}
+
+
+
+/*
+=================================
+            Body
+=================================
+*/
+
+.body-form {
+    margin: 0 2em 3em;
+}
+
+.body-form h2 {
+    margin: 2em 0;
+}
+
+.body-form form input, .body-form form label {
+    display: block;
+}
+
+.body-form form input, .body-form form button {
+    font-family: var(--main-font);
+    font-size: 1rem;
+    width: stretch;
+}
+
+.body-form form label {
+    margin-bottom: 7px;
+}
+
+.body-form form input {
+    margin-bottom: 1.25em;
+    padding: 0.625em 0 0.625em 0.4375em;
+    border-radius: 7px;
+    border: 1px solid var(--main-color-app);
+}
+
+.body-form form input[type="date"] {
+    padding-right: 0.4735em;
+}
+
+.body-form form button {
+    margin-top: 0.6875em;
+    padding: 1.25em 0;
+    border-radius: 30px;
+    font-weight: bold;
+    border: 0;
+    background-color: var(--button-app-color);
+    color: var(--white-app-color);
+}
+
+

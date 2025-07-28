@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="../css/ingresar_boleta.css" rel="stylesheet">
+    <title>Gestión de Gastos - Ingresa tu Boleta</title>
+</head>
+    <body>
+        <header class="main-header">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <h1>Ingresa tu boleta</h1>
+        </header>
+
+        <section class="body-form">
+            <h2>Ingresa los datos de tu boleta</h2>
+
+            <form>
+                <label for="titulo">Título <span></span></label>
+                <input type="text" name="titulo" id="titulo" maxlength="30"/>
+
+                <label for="nro-boleta">N° de boleta</label>
+                <input type="text" name="nro-boleta" id="nro-boleta" placeholder="Ejemplo: 150310"/>
+
+                <label for="fecha">Fecha</label>
+                <input type="date" name="fecha" id="fecha"/>
+
+                <label for="costo">Costo final (costo total + 19% IVA)</label>
+                <input type="text" name="costo" id="costo" placeholder="Ejemplo: 3000"/>
+
+                <label for="descripcion">Descripción <span></span></label>
+                <input type="text" name="descripcion" id="descripcion" maxlength="50"/>
+
+                <button>Ingresar boleta</button>
+            </form>
+        </section>
+
+        <script src="../js/ingresar_boleta.js"></script>
+    </body>
+</html>
