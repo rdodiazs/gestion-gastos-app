@@ -4,7 +4,7 @@ let headerElements = Array.from(document.getElementsByClassName("main-header").i
 
 headerElements = headerElements.slice(0, 2); // Dejo solo los elementos de los sidebars
 
-let elementsToEvent = Array.from(document.getElementsByTagName("svg"));
+let elementsToEvent = Array.from(document.querySelectorAll(".main-header svg"));
 
 elementsToEvent.push(headerElements[0]);
 
@@ -49,4 +49,32 @@ for(element of elementsToEvent) {
     }
 }
 
+// Codigo para abrir vista para agregar una boleta.
+let ingresarElements = Array.from(document.querySelectorAll(".gastos-mes-container button, .ingresar-container, .opacity-ingresar, .close-ingresar svg"));
+let ingresarEvents = [];
+
+let [, opacityContainer, ingresarContainer] = ingresarElements;
+
+for(let i = 0; i < ingresarElements.length; i++) {
+
+    if(i === 2) {
+        i += 1;
+    }
+    
+    ingresarEvents.push(ingresarElements[i]);
+}
+
+const toggleIngresar = (elem) => {
+    elem.addEventListener(
+        "click",
+        () => {
+            let isVisible = elem.localName === "button";
+
+            ingresarContainer.classList.toggle("ingresar-open", isVisible);
+            opacityContainer.classList.toggle("opacity-on", isVisible);
+        }
+    );
+}
+
+ingresarEvents.forEach((elem) => toggleIngresar(elem));
 

@@ -57,8 +57,8 @@
                         <p>Hola,</p>
                         <p class="nombre-usuario">Juan</p>
                     </div>
-                    <p>Tu gasto de este mes es de</p>
-                    <p>$8000</p>
+                    <p>Tu gasto del último mes es de</p>
+                    <p>$8.000</p>
                 </div>
             </div>
         </header>    
@@ -74,6 +74,57 @@
                 </ul>
 
                 <button>Ingresar Boleta</button>
+            </div>
+
+            <div class="opacity-ingresar"></div>
+            <div class="ingresar-container">
+                <div class="close-ingresar">
+                    <svg width="80px" height="80px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000" stroke="#000000">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                      <g id="SVGRepo_iconCarrier">
+                        <title>cross</title>
+                        <desc>Created with Sketch Beta.</desc>
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                          <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-469.000000, -1041.000000)" fill="#000000">
+                            <path d="M487.148,1053.48 L492.813,1047.82 C494.376,1046.26 494.376,1043.72 492.813,1042.16 C491.248,1040.59 488.712,1040.59 487.148,1042.16 L481.484,1047.82 L475.82,1042.16 C474.257,1040.59 471.721,1040.59 470.156,1042.16 C468.593,1043.72 468.593,1046.26 470.156,1047.82 L475.82,1053.48 L470.156,1059.15 C468.593,1060.71 468.593,1063.25 470.156,1064.81 C471.721,1066.38 474.257,1066.38 475.82,1064.81 L481.484,1059.15 L487.148,1064.81 C488.712,1066.38 491.248,1066.38 492.813,1064.81 C494.376,1063.25 494.376,1060.71 492.813,1059.15 L487.148,1053.48" id="cross" sketch:type="MSShapeGroup"></path>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                </div>
+
+                <h2>Ingresa tu boleta</h2>
+
+                <form>
+                <!--
+                    =============================================
+                        Explicacion de expresiones regulares:
+                    =============================================
+
+                    1) /^(?!\s*$).*$/
+                       --------------
+                    Busca evitar que el usuario ingrese solo espacios en
+                    blanco (incluyendo saltos de linea y tabulaciones).
+
+                    2) /^(0|[1-9]\d*)$/
+                       ----------------
+                    Usado en los inputs numericos. Busca que el usuario
+                    solo ingrese numeros enteros positivos. Si, por ejemplo,
+                    la cadena consiste solo de ceros (por ej, 000), lo toma
+                    como invalido. Lo mismo sucede si empieza con un cero y
+                    tiene otros numeros (por ej, 0124).
+                -->
+
+                    <input type="text" name="titulo" id="titulo" maxlength="30" placeholder="Título" pattern="^(?!\s*$).*$" required/>
+                    <input type="text" name="nro-boleta" id="nro-boleta" placeholder="N° de Boleta" pattern="^(0|[1-9]\d*)$" required/>
+                    <input type="date" name="fecha" id="fecha" required/>
+                    <input type="text" name="costo" id="costo" placeholder="Costo final" pattern="^(0|[1-9]\d*)$" required/>
+                    <input type="text" name="descripcion" id="descripcion" maxlength="50" placeholder="Descripción" pattern="^(?!\s*$).*$"/>
+
+                    <button class="confirmar-btn">Confirmar</button>
+                </form>
             </div>
         </section>
 

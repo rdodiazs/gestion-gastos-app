@@ -201,3 +201,90 @@ body {
     color: var(--white-app-color);
 }
 
+/* Vista para ingresar boleta */
+.ingresar-container, .opacity-ingresar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.ingresar-container {
+    width: 100vw;
+    height: 0;
+    overflow-y: scroll;
+    background-color: white;
+    border-radius: 10px;
+    transition: height 0.5s;
+}
+
+.opacity-ingresar {
+    height: 0;
+    width: 100vw;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+.opacity-on {
+    height: 100vh;
+    overflow-y: visible;
+    opacity: 0.5;
+}
+
+.ingresar-open {
+    height: 75vh;
+    overflow-y: scroll;
+}
+
+.ingresar-container .close-ingresar {
+    text-align: right;
+}
+
+.close-ingresar svg {
+    width: 25px;
+    height: 25px;
+    margin: 15px 15px 0 0;
+}
+
+.ingresar-container h2 {
+    font-size: 1.875rem;
+    text-align: center;
+    margin: 0.9375em 0 1.875em;
+}
+
+.ingresar-container form {
+    margin: 0 30px 30px;
+}
+
+.ingresar-container input, .ingresar-container .confirmar-btn {
+    display: block;
+    width: stretch;
+    font-size: 1rem;
+}
+
+.ingresar-container input {
+    border: 1px solid var(--main-color-app);
+    border-radius: 7px;
+    padding: 10px 5px;
+}
+
+.ingresar-container input:invalid {
+    color: var(--button-app-color);
+    border-color: var(--button-app-color);
+}
+
+.ingresar-container input:not([name="descripcion"]) {
+    margin-bottom: 15px;
+}
+
+.ingresar-container .confirmar-btn {
+    font-weight: bold;
+    border: 0;
+    border-radius: 30px;
+    margin-top: 30px;
+    padding: 1.25em 0;
+    font-family: var(--main-font);
+    background-color: var(--button-app-color);
+    color: var(--white-app-color);
+}
+
