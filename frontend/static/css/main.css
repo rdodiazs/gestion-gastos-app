@@ -176,7 +176,11 @@ body {
     margin-top: 3.75em;
 }
 
-.gastos-mes-container ul li {
+.gastos-mes-container ul a {
+    text-decoration: none;
+}
+
+.gastos-mes-container ul a li {
     list-style-type: none;
     border: 1px solid;
     text-align: center;
