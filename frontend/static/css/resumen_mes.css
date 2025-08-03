@@ -1,0 +1,141 @@
+@import url("variables.css");
+
+body {
+    margin: 0;
+    font-family: var(--main-font);
+}
+
+
+/*
+=================
+    Header
+=================
+*/
+
+.main-header {
+    background-color: var(--main-color-app);
+    padding: 1.875em 0 5.625em;
+}
+
+.main-header a {
+    display: inline;
+}
+
+.main-header a svg {
+    margin-left: 10px;
+}
+
+.main-header a svg path {
+    stroke: var(--white-app-color);
+}
+
+.main-header h1 {
+    display: grid;
+    margin: 0 25px;
+    font-size: 2.845425rem;
+    color: var(--white-app-color);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.3em;
+}
+
+
+/*
+============
+    BODY
+============
+*/
+
+
+/* Contenido del resumen */
+.resumen-container {
+    background-color: var(--main-light-color);
+    padding: 60px 15px;
+}
+
+.resumen-content {
+    background-color: var(--main-color-app);
+    border-radius: 10px;
+    padding: 17px;
+}
+
+.resumen-content h2, .resumen-content p {
+    margin: 0;
+    color: var(--white-app-color);
+}
+
+.resumen-content h2 {
+    font-size: 1.5rem;
+}
+
+.resumen-content p:nth-child(2) {
+    font-size: 1.125rem;
+    margin-top: 60px;
+}
+
+.resumen-content p:nth-child(3) {
+    font-size: 2.845425rem;
+    margin: 1.25em 0;
+    font-weight: bold;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+
+/* Resumen boletas*/
+.boletas-container h2, .boleta p {
+    margin: 0;
+}
+
+.boletas-container h2 {
+    font-size: 2rem;
+    margin: 60px 15px;
+}
+
+.listado-boletas {
+    margin-bottom: 60px;
+}
+
+.boleta {
+    background-color: var(--main-light-color);
+    padding: 10px 15px;
+    margin: 0 15px;
+    border: 1px solid var(--main-color-app);
+    border-radius: 10px;
+    color: var(--white-app-color);
+}
+
+.boleta:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.boleta .titulo {
+    display: grid;
+    grid-template-columns: 1fr 0.15fr;
+    align-items: center;
+    font-size: 1.25rem;
+    margin: 10px 0;
+}
+
+.boleta .titulo span {
+    font-weight: bold;
+}
+
+.boleta .titulo span a {
+    color: var(--white-app-color);
+    text-decoration: none;
+}
+
+.boleta .titulo i {
+    text-align: right;
+    font-size: 2.1875rem;
+    font-weight: bold;
+    color: var(--button-app-color);
+}
+
+.boleta .costo {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
