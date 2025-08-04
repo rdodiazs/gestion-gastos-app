@@ -4,16 +4,19 @@
 
 body {
     margin: 0;
-    min-height: 150vh;
     font-family: var(--main-font);
 }
 
+/*
+==============
+    HEADER
+==============
+*/
+
 .header-login {
-    display: grid;
     background-color: var(--main-color-app);
     color: var(--white-app-color);
-    height: 270px;
-    align-items: center;
+    padding: 5em 0;
 }
 
 .header-login h1 {
@@ -22,24 +25,34 @@ body {
     font-size: 2.845425rem;
 }
 
+.login-body {
+    margin: 3.75em 0;
+}
+
 .login-body h2 {
-    margin: 1.811em 0;
+    margin: 0;
     font-size: 2.3125rem;
     text-align: center;
 }
 
 .login-body p {
-    font-size: 1rem;
     text-align: center;
+    margin: 1em 0 0 0;
 }
+
+
+/*
+============
+    BODY
+============
+*/
 
 .login-body p a {
     color: var(--main-color-app);
 }
 
 .login-formulario {
-    display: grid;
-    padding: 0 2.5em;
+    margin: 3.75em 2.5em 0;
 }
 
 .login-formulario input::placeholder {
@@ -48,23 +61,23 @@ body {
     color: var(--placeholder-color);
 }
 
-.login-formulario input {
-    margin-bottom: 0.9375em;
+.login-formulario input, .login-formulario button {
     font-size: 1rem;
-    height: 2.875em;
-    padding-left: 1em;
+    width: stretch;
+    padding: 0.9375em 1em;
     border-radius: 40px;
-    border-width: 1px;
-    border-color: var(--main-color-app);
 }
 
-.login-formulario .login {
-    margin: 1.875em 0 0 0;
-    border-width: 0px;
+.login-formulario input {
+    margin-bottom: 1.25em;
+    border: 1px solid var(--main-color-app);
+}
+
+.login-formulario button {
     background-color: var(--main-color-app);
     font-family: var(--main-font);
     font-weight: bold;
     color: var(--white-app-color);
+    border: 0;
 }
-
 
