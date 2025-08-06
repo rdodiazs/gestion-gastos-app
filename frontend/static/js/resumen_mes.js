@@ -4,11 +4,6 @@ const mostrarCostoTotal = () => {
     const costoTotal = document.querySelector(".resumen-content p:nth-child(3)");
     let costoValues = [];
 
-    if(costoElements.length === 0) {
-        costoTotal.textContent = "$0";
-        return
-    }
-    
     costoElements.forEach(
         (costo) => {
             let costoValue = parseInt(costo.textContent.replace(/(\$|\.)/g, ""));
@@ -17,12 +12,8 @@ const mostrarCostoTotal = () => {
         } 
     );
     
-    // Suma de los elementos del array costoValues
-    const costoTotalValue = costoValues.reduce(
-        (sumaAcumulada, elementoActual) => {
-            return sumaAcumulada + elementoActual
-        }
-    );
+    // Suma de los elementos del array costoValues (con valor inicial igual a 0)
+    const costoTotalValue = costoValues.reduce((sumAcum, costo) => sumAcum + costo, 0);
     
     // El metodo toLocaleString permite poner los puntos separadores de miles a la cadena numerica
     const costoFinalText = `\$${costoTotalValue.toLocaleString("es-CL")}`;
