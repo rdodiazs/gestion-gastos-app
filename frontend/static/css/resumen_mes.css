@@ -139,3 +139,52 @@ body {
     font-size: 1.25rem;
 }
 
+/* Modal de confirmacion para eliminar gastos */
+dialog {
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+}
+
+dialog::backdrop {
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+.header-modal .close-modal {
+    text-align: right;
+}
+
+.header-modal svg {
+    height: 1rem;
+    width: 1rem;
+    margin: 15px 15px;
+}
+
+.header-modal p {
+    text-align: center;
+    font-weight: bold;
+    margin:  0 30px 30px;
+}
+
+.caja-decision {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.caja-decision button {
+    padding: 15px 0;
+    font-family: var(--main-font-app);
+    font-size: 1rem;
+    color: var(--white-app-color);
+    border: 0;
+}
+
+.caja-decision button[value="confirmar"] {
+    background-color: var(--button-app-color);
+}
+
+.caja-decision button[value="cancelar"] {
+    background-color: var(--placeholder-color);
+}
+

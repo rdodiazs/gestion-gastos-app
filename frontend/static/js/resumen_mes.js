@@ -32,26 +32,36 @@ const mostrarCostoTotal = () => {
 
 mostrarCostoTotal(); // Se muestra el costo total al iniciar/refrescar la pagina
 
-// Funcion para eliminar boletas.
-const boletaContainers = document.querySelectorAll(".boleta");
+// Funcion para eliminar boletas usando un modal.
+const boletaContainers = document.querySelectorAll(".boleta"),
+      dialogElement = document.querySelector("dialog"),
+      dialogBtns = document.querySelectorAll("dialog button, .close-modal svg");
 
-const eliminarBoleta = (boleta) => {
-    const deleteBtn = boleta.children[1].children[1];
+let boletaActual = null;
 
-    deleteBtn.addEventListener(
-        "click",
-        () => {
-            const confirmar = confirm("¿Desea remover la boleta? Su eliminación no se podrá revertir.");
-
-            if(confirmar) {
-                boleta.remove();
-                mostrarCostoTotal(); // Se actualiza el costo total cada vez que se elimine una boleta
-            } else {
-                return
-            }
-        }
-    );
+const abrirModalEliminar = (boleta) => {
+    boletaActual = boleta;
+    dialogElement.showModal();
 }
 
-boletaContainers.forEach((boleta) => eliminarBoleta(boleta));
+const confirmarEliminar = (event) => {
+    if(event.target.value === "confirmar" && boletaActual) {
+        boletaActual.remove();
+        mostrarCostoTotal(); // Se actualiza el costo total cada vez que se elimine una boleta
+        boletaActual = null;
+    } else {
+        boletaActual = null;
+    }
+
+    dialogElement.close();
+}
+
+boletaContainers.forEach(
+    (boleta) => {
+        const abrirModalBtn = boleta.querySelector(".bx-trash");
+        abrirModalBtn.addEventListener("click", () => abrirModalEliminar(boleta));
+    }
+);
+
+dialogBtns.forEach((btn) => btn.addEventListener("click", confirmarEliminar));
 
