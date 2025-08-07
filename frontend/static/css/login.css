@@ -22,8 +22,16 @@ body {
 .header-login h1 {
     margin: 0;
     text-align: center;
-    font-size: 2.845425rem;
+    font-size: 3.125rem;
 }
+
+
+
+/*
+============
+    BODY
+============
+*/
 
 .login-body {
     margin: 3.75em 0;
@@ -39,13 +47,6 @@ body {
     text-align: center;
     margin: 1em 0 0 0;
 }
-
-
-/*
-============
-    BODY
-============
-*/
 
 .login-body p a {
     color: var(--main-color-app);
@@ -79,5 +80,39 @@ body {
     font-weight: bold;
     color: var(--white-app-color);
     border: 0;
+}
+
+
+/*
+=====================
+    MEDIA QUERIES
+=====================
+*/
+
+@media screen and (min-width: 62.6875em) { /* 62.6875 em = 1003 px */
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        min-height: 100vh;
+    }
+
+    .header-login {
+        display: grid;
+        grid-gap: 30px;
+    }
+
+    .header-login h1 {
+        display: grid;
+        align-items: end;
+    }
+
+    .login-body {
+        margin: auto 60px;
+    }
+
+    .login-formulario {
+        margin: 3.75em 0 0;
+    }
 }
 
