@@ -32,6 +32,10 @@ body {
     padding-top: 0.3em;
 }
 
+.header-page h2 {
+    display: none;
+}
+
 
 /* Body */
 
@@ -106,6 +110,13 @@ body {
     .header-page h1 {
         display: grid;
         align-items: end;
+    }
+
+    .header-page h2 {
+        display: block;
+        font-weight: 300;
+        text-align: center;
+        margin: 0;
     }
 
     .header-page .left-arrow {
