@@ -25,6 +25,11 @@ body {
     font-size: 3.125rem;
 }
 
+.header-login h2 {
+    margin: 40px 0 0;
+    text-align: center;
+    font-weight: 300;
+}
 
 
 /*
@@ -105,6 +110,10 @@ body {
     .header-login h1 {
         display: grid;
         align-items: end;
+    }
+
+    .header-login h2 {
+        margin: 0 60px;
     }
 
     .login-body {
