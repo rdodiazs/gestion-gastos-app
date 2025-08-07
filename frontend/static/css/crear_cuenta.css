@@ -27,7 +27,7 @@ body {
 
 .header-page h1 {
     margin: 0;
-    font-size: 2.845425rem;
+    font-size: 3.125rem;
     text-align: center;
     padding-top: 0.3em;
 }
@@ -81,5 +81,44 @@ body {
 
 .crear-cuenta-body p a {
     color: var(--main-color-app);
+}
+
+
+/*
+=====================
+    MEDIA QUERIES
+=====================
+*/
+
+@media screen and (min-width: 62.6875em) { /* 62.6875 em = 1003 px */
+    body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+    }
+
+    .header-page {
+        display: grid;
+        grid-area: 1 / 2 / 2 / 3;
+        grid-gap: 30px;
+    }
+
+    .header-page h1 {
+        display: grid;
+        align-items: end;
+    }
+
+    .header-page .left-arrow {
+        display: none;
+    }
+
+    .crear-cuenta-body {
+        grid-area: 1 / 1 / 2 / 2;
+        margin: auto 2.5em;
+    }
+
+    .crear-cuenta-body form {
+        margin: 3.75em 0 0;
+    }
 }
 
