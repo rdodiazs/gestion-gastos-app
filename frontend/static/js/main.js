@@ -2,9 +2,10 @@
 // Código para abrir y cerrar side-menu
 let headerElements = Array.from(document.getElementsByClassName("main-header").item(0).children);
 
-headerElements = headerElements.slice(0, 2); // Dejo solo los elementos de los sidebars
 
-let elementsToEvent = Array.from(document.querySelectorAll(".main-header svg"));
+headerElements = headerElements.slice(1, 3); // Dejo solo los elementos de los sidebars
+
+let elementsToEvent = Array.from(document.querySelectorAll(".fa-bars, .fa-xmark"));
 
 elementsToEvent.push(headerElements[0]);
 
@@ -50,7 +51,7 @@ for(element of elementsToEvent) {
 }
 
 // Codigo para abrir vista para agregar una boleta.
-let ingresarElements = Array.from(document.querySelectorAll(".gastos-mes-container button, .ingresar-container, .opacity-ingresar, .close-ingresar svg"));
+let ingresarElements = Array.from(document.querySelectorAll(".gastos-mes-container button, .ingresar-container, .opacity-ingresar, .close-ingresar .fa-xmark"));
 let ingresarEvents = [];
 
 let [, opacityContainer, ingresarContainer] = ingresarElements;
