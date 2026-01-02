@@ -12,17 +12,37 @@
             <h1>Gestión de Gastos</h1>
             <h2>Tu App para seguir y administrar tus gastos.</h2>
         </header>
+
+        <main class="main-container">
+            <div class="content-wrapper">
+                <article class="login-body">
+                    <h2>Bienvenido/a</h2>
     
-        <section class="login-body">
-            <h2>Bienvenido/a</h2>
+                    <form class="formulario login-formulario" action="main.html">
+                        <input class="usuario" type="text" name="user" placeholder="Usuario" autocomplete="off"/>
+                        <input class="email" type="email" name="email" placeholder="Email" autocomplete="off"/>
+                        <button>Iniciar sesión</button>
+                    </form>
     
-            <form class="login-formulario" action="main.html">
-                <input class="usuario" type="text" name="user" placeholder="Usuario" autocomplete="off"/>
-                <input class="email" type="email" name="email" placeholder="Email" autocomplete="off"/>
-                <button>Iniciar sesión</button>
-            </form>
-    
-            <p>¿No tienes cuenta? <a href="crear_cuenta.html">Hazte una aquí</a></p>
-        </section> 
+                    <p>¿No tienes cuenta? <span class="clickable signup-click">Hazte una aquí</span></p>
+                </article> 
+
+                <article class="crear-cuenta-body">
+                    <h2>¡Únete a la app!</h2>
+
+                    <form class="formulario crear-cuenta-formulario">
+                        <input id="name" name="name" type="text" placeholder="Nombre"/>
+                        <input id="username" name="username" type="text" placeholder="Usuario"/>
+                        <input id="email" type="email" placeholder="Email"/>
+
+                        <button>Crear cuenta</button>
+                    </form>
+
+                    <p>¿Ya tienes una cuenta? <span class="clickable login-click">Inicia sesión</span>
+                </article>
+            </div>
+        </main>
+
+        <script src="../js/login.js"></script>
     </body>
 </html>
