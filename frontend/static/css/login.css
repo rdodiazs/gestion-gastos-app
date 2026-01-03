@@ -42,49 +42,56 @@ body {
 .content-wrapper {
     position: relative;
     margin: 20px;
+    background-color: white;
+    border: 1px #e3e3e3 solid;
 }
 
 .login-body, .crear-cuenta-body {
-    background-color: white;
-    border: 1px #e3e3e3 solid;
-    padding: 20px;
 }
 
 .login-body {
     position: relative;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    transition: opacity 0.5s ease-in-out;
+    transform: translateY(0%);
+    padding: 20px;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 .crear-cuenta-body {
+    visibility: hidden;
     position: absolute;
+    overflow: hidden;
+    padding: 0;
     bottom: 0;
-    overflow-y: hidden;
     right: 0;
     left: 0;
     opacity: 0;
     max-height: 0;
     z-index: 0;
-    transform: translateY(100%);
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateY(10%);
+    transition: transform 0.5s ease-in-out, visibility 1s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .signup-activo {
-    position: relative;
+    position: static;
+    visibility: visible;
     transform: translateY(0%);
+    padding: 20px;
     opacity: 1;
-    overflow-y: visible;
+    overflow: visible;
     max-height: 469px;
-    z-index: 1;
 }
 
 .login-inactivo {
     position: absolute;
+    left: 0;
+    right: 0;
+    visibility: hidden;
     opacity: 0;
-    overflow-y: hidden;
+    overflow: hidden;
     z-index: 0;
+    padding: 0;
+    transform: translateY(-10%);
+    max-height: 0;
 }
 
 .login-body h2, .crear-cuenta-body h2 {
@@ -129,4 +136,66 @@ body {
     font-weight: bold;
     color: var(--white-app-color);
     border: 0;
+}
+
+
+/*
+=====================
+    MEDIA QUERIES
+=====================
+*/
+
+@media (min-width: 992px) {
+    .wrapper-page {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: 100vh;
+    }
+
+    .header-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .content-wrapper {
+        display: flex;
+        align-items: center;
+        position: static;
+        margin: 40px 60px;
+    }
+    
+    .login-body, .crear-cuenta-body {
+        padding: 0;
+    }
+
+    .login-body h2, .crear-cuenta-body h2 {
+       margin: 40px 0 60px;
+    }
+
+    .login-body {
+        transform: translateX(0%);
+    }
+
+    .crear-cuenta-body {
+        transform: translateX(-10%);
+    }
+
+    .signup-activo {
+        transform: translateX(0%);
+    }
+    
+    .login-inactivo {
+        transform: translateX(10%);
+    }
+
+    .formulario {
+        margin: 0 40px;
+    }
 }

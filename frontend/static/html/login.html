@@ -8,41 +8,44 @@
         <title>Gestión de Gastos - Iniciar Sesión</title>
     </head>
     <body>
-        <header class="header-login">
-            <h1>Gestión de Gastos</h1>
-            <h2>Tu App para seguir y administrar tus gastos.</h2>
-        </header>
+        <div class="wrapper-page">
+            <header class="header-login">
+                <div class="header-content">
+                    <h1>Gestión de Gastos</h1>
+                    <h2>Tu App para seguir y administrar tus gastos.</h2>
+                </div>
+            </header>
 
-        <main class="main-container">
-            <div class="content-wrapper">
-                <article class="login-body">
-                    <h2>Bienvenido/a</h2>
-    
-                    <form class="formulario login-formulario" action="main.html">
-                        <input class="usuario" type="text" name="user" placeholder="Usuario" autocomplete="off"/>
-                        <input class="email" type="email" name="email" placeholder="Email" autocomplete="off"/>
-                        <button>Iniciar sesión</button>
-                    </form>
-    
-                    <p>¿No tienes cuenta? <span class="clickable signup-click">Hazte una aquí</span></p>
-                </article> 
+            <main class="main-container">
+                <div class="content-wrapper">
+                    <article class="login-body">
+                        <h2>Bienvenido/a</h2>
+        
+                        <form class="formulario login-formulario" action="main.html">
+                            <input id="usuario" type="text" name="usuario" placeholder="Usuario"/>
+                            <input id="correo" type="email" name="correo" placeholder="Email"/>
+                            <button>Iniciar sesión</button>
+                        </form>
+        
+                        <p>¿No tienes cuenta? <span class="clickable signup-click">Hazte una aquí</span></p>
+                    </article> 
 
-                <article class="crear-cuenta-body">
-                    <h2>¡Únete a la app!</h2>
+                    <article class="crear-cuenta-body">
+                        <h2>¡Únete a la app!</h2>
 
-                    <form class="formulario crear-cuenta-formulario">
-                        <input id="name" name="name" type="text" placeholder="Nombre"/>
-                        <input id="username" name="username" type="text" placeholder="Usuario"/>
-                        <input id="email" type="email" placeholder="Email"/>
+                        <form class="formulario crear-cuenta-formulario">
+                            <input id="nombre" type="text" name="nombre" placeholder="Nombre"/>
+                            <input id="nombre-usuario" type="text" name="nombre-usuario" placeholder="Usuario"/>
+                            <input id="correo" type="email" name="correo" placeholder="Email"/>
 
-                        <button>Crear cuenta</button>
-                    </form>
+                            <button>Crear cuenta</button>
+                        </form>
 
-                    <p>¿Ya tienes una cuenta? <span class="clickable login-click">Inicia sesión</span>
-                </article>
-            </div>
-        </main>
-
+                        <p>¿Ya tienes una cuenta? <span class="clickable login-click">Inicia sesión</span>
+                    </article>
+                </div>
+            </main>
+        </div>
         <script src="../js/login.js"></script>
     </body>
 </html>
