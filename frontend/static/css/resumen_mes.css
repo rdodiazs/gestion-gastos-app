@@ -146,7 +146,7 @@ body {
 
 /* Modal de confirmacion para eliminar gastos */
 dialog {
-    padding: 0;
+    padding: 30px 15px;
     border: 0;
     border-radius: 10px;
 }
@@ -156,44 +156,62 @@ dialog::backdrop {
     opacity: 0.5;
 }
 
-.header-modal .close-modal {
-    text-align: right;
+.header-modal {
+    display: flex;
+}
+
+.texto-modal-container h2, .texto-modal-container p {
+    margin: 0 0 20px;
+}
+
+.header-modal .fa-solid, .texto-modal-container h2 {
+    font-size: 20px;
+}
+
+.icono-alerta .fa-triangle-exclamation {
+    color: var(--button-app-color);
+    background-color: #ffa8a6;
+    margin-right: 15px;
+    padding: 7px 5px;
+    border-radius: 20px;
 }
 
 .close-modal .fa-xmark {
-    margin: 15px;
-    font-size: 20px;
+    color: #838383;
     cursor: pointer;
 }
 
-.header-modal p {
-    text-align: center;
-    margin:  0 30px;
+.close-modal .fa-xmark:hover {
+    color: #595959;
 }
 
-.header-modal p span {
-    font-weight: bold;
-}
-
-.caja-decision {
-    text-align: center;
+.texto-modal-container p {
+    color: #838383;
 }
 
 .caja-decision button {
-    padding: 10px 50px;
+    width: stretch;
+    padding: 15px 20px;
     font-family: var(--main-font-app);
-    margin: 15px 10px;
+    font-weight: bold;
     cursor: pointer;
-    color: var(--white-app-color);
     border: 0;
     border-radius: 15px;
 }
 
 .caja-decision button[value="confirmar"] {
     background-color: var(--button-app-color);
+    color: var(--white-app-color);
+}
+
+.caja-decision button[value="confirmar"]:hover, .caja-decision button[value="confirmar"]:focus {
+    background-color: #d56561;
 }
 
 .caja-decision button[value="cancelar"] {
-    background-color: var(--placeholder-color);
+    background-color: var(--white-app-color);
+    border: 1px #b1b1b1 solid;
+    color: #515151;
+    margin: 0 0 15px 0;
 }
 
