@@ -26,7 +26,7 @@ mostrarCostoTotal(); // Se muestra el costo total al iniciar/refrescar la pagina
 // Funcion para eliminar boletas usando un modal.
 const boletaContainers = document.querySelectorAll(".boleta"),
       dialogElement = document.querySelector("dialog"),
-      dialogBtns = document.querySelectorAll("dialog button, .close-modal svg");
+      dialogBtns = document.querySelectorAll("dialog button, .close-modal .fa-xmark");
 
 let boletaActual = null;
 
@@ -49,7 +49,7 @@ const confirmarEliminar = (event) => {
 
 boletaContainers.forEach(
     (boleta) => {
-        const abrirModalBtn = boleta.querySelector(".bx-trash");
+        const abrirModalBtn = boleta.querySelector(".fa-trash-can");
         abrirModalBtn.addEventListener("click", () => abrirModalEliminar(boleta));
     }
 );

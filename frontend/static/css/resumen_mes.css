@@ -3,6 +3,7 @@
 body {
     margin: 0;
     font-family: var(--main-font);
+    background-color: #f9f9f9;
 }
 
 
@@ -12,40 +13,29 @@ body {
 =================
 */
 
-.main-header {
+.title-container {
     background-color: var(--main-color-app);
-    padding: 1.875em 0 5.625em;
 }
 
-.main-header a {
-    display: inline;
+.title-container a {
+    display: inline-block;
+    font-size: 45px;
+    text-decoration: none;
+    margin: 30px 0 0 15px;
 }
 
-.main-header a svg {
-    margin-left: 10px;
+.title-container .fa-arrow-left {
+    display: block;
+    color: var(--white-app-color);
 }
 
-.main-header a svg path {
-    stroke: var(--white-app-color);
-}
-
-.main-header h1 {
-    display: grid;
-    margin: 0 25px;
+.title-container h1 {
+    margin: 0;
+    padding: 30px 0 80px;
     font-size: 2.845425rem;
     color: var(--white-app-color);
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    padding-top: 0.3em;
 }
-
-
-/*
-============
-    BODY
-============
-*/
 
 
 /* Contenido del resumen */
@@ -83,24 +73,38 @@ body {
 }
 
 
+
+
+/*
+============
+    BODY
+============
+*/
+
 /* Resumen boletas*/
+.resumen-body {
+    background-color: white;
+    border: 1px #e3e3e3 solid;
+    margin: 40px 7px;
+    padding: 0 10px;
+}
+
 .boletas-container h2, .boleta p {
     margin: 0;
 }
 
 .boletas-container h2 {
     font-size: 2rem;
-    margin: 60px 15px;
+    padding: 50px 0;
 }
 
 .listado-boletas {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .boleta {
     background-color: var(--main-light-color);
     padding: 10px 15px;
-    margin: 0 15px;
     border: 1px solid var(--main-color-app);
     border-radius: 10px;
     color: var(--white-app-color);
@@ -127,11 +131,12 @@ body {
     text-decoration: none;
 }
 
-.boleta .titulo i {
-    text-align: right;
-    font-size: 2.1875rem;
-    font-weight: bold;
+.boleta .titulo .fa-trash-can {
+    font-size: 30px;
+    justify-self: end;
+    align-self: center;
     color: var(--button-app-color);
+    cursor: pointer;
 }
 
 .boleta .costo {
@@ -155,29 +160,33 @@ dialog::backdrop {
     text-align: right;
 }
 
-.header-modal svg {
-    height: 1rem;
-    width: 1rem;
-    margin: 15px 15px;
+.close-modal .fa-xmark {
+    margin: 15px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .header-modal p {
     text-align: center;
+    margin:  0 30px;
+}
+
+.header-modal p span {
     font-weight: bold;
-    margin:  0 30px 30px;
 }
 
 .caja-decision {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
 }
 
 .caja-decision button {
-    padding: 15px 0;
+    padding: 10px 50px;
     font-family: var(--main-font-app);
-    font-size: 1rem;
+    margin: 15px 10px;
+    cursor: pointer;
     color: var(--white-app-color);
     border: 0;
+    border-radius: 15px;
 }
 
 .caja-decision button[value="confirmar"] {
