@@ -23,6 +23,59 @@ const mostrarCostoTotal = () => {
 
 mostrarCostoTotal(); // Se muestra el costo total al iniciar/refrescar la pagina
 
+
+// Eventos para mostrar detalle de boleta y formulario para editar boletas
+const switchContainer = document.querySelector(".switch-btn-container"),
+      switchBtn = document.querySelector(".switch-btn"),
+      infoBoleta = document.querySelector(".info-boleta"),
+      formEditar = document.querySelector(".form-container");
+      openDetalleBtn = document.querySelector(".fa-arrow-up-right-from-square"),
+      opacityContainer = document.querySelector(".opacity-detalle"),
+      detalleContainer = document.querySelector(".detalle-boleta-container");
+
+const closeDetalleElems = [opacityContainer, document.querySelector(".cerrar-detalle-container")];
+
+let switchStatus = false;
+
+openDetalleBtn.addEventListener("click", () => {
+    detalleContainer.classList.add("detalle-on");
+    opacityContainer.classList.add("opacity-on");
+});
+
+closeDetalleElems.forEach((closeElem) => {
+    closeElem.addEventListener("click", () => {
+        detalleContainer.classList.remove("detalle-on");
+        opacityContainer.classList.remove("opacity-on");
+
+        // Si esta abierta la ventana del formulario para editar una boleta,
+        // al clickear la "x" o la pantalla "opacity", tambien se
+        // cierra esta ventana para que vuelva a su estado original.
+        if(switchStatus) {
+            switchBtn.classList.remove("switch-on");
+            infoBoleta.classList.remove("boleta-hidden");
+            formEditar.classList.remove("form-open");
+            switchStatus = false;
+        }
+    });
+});
+
+switchContainer.addEventListener("click", () => {
+    if(!switchStatus) {
+        switchBtn.classList.add("switch-on");
+        infoBoleta.classList.add("boleta-hidden");
+        formEditar.classList.add("form-open");
+        switchStatus = true;
+    } else {
+        switchBtn.classList.remove("switch-on");
+        infoBoleta.classList.remove("boleta-hidden");
+        formEditar.classList.remove("form-open");
+        switchStatus = false;
+    }
+});
+
+
+
+
 // Funcion para eliminar boletas usando un modal.
 const boletaContainers = document.querySelectorAll(".boleta"),
       dialogElement = document.querySelector("dialog"),

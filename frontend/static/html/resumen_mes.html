@@ -36,34 +36,95 @@
                 <div class="listado-boletas">
                     <article class="boleta">
                         <p class="fecha">05-01-2025</p>
-                        <h3 class="titulo">
-                            <span><a href="detalle_boleta.html">Boleta 1</a></span>
-                            <i class="fa-solid fa-trash-can"></i>
-                        </h3>
+                        <div class="titulo">
+                            <h3>Boleta 1</h3>
+                            <div class="iconos-accion">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                        </div>
                         <p class="costo">$3.000</p>
                     </article>
 
                     <article class="boleta">
                         <p class="fecha">12-01-2025</p>
-                        <h3 class="titulo">
-                            <span>Ipsum pariatur est iusto. Veni</span>
-                            <i class="fa-solid fa-trash-can"></i>
-                        </h3>
+                        <div class="titulo">
+                            <h3>Ipsum pariatur est iusto. Veni</h3>
+                            <div class="iconos-accion">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                        </div>
                         <p class="costo">$10.500</p>
                     </article>
 
                     <article class="boleta">
                         <p class="fecha">23-01-2025</p>
-                        <h3 class="titulo">
-                            <span>Boleta 3</span>
-                            <i class="fa-solid fa-trash-can"></i>
-
-                        </h3>
+                        <div class="titulo">
+                            <h3>Boleta 3</h3>
+                            <div class="iconos-accion">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                        </div>
                         <p class="costo">$4.000</p>
                     </article>
                 </div>
             </section>
         </main>
+
+        <div class="opacity-detalle"></div>
+
+        <section class="detalle-boleta-container">
+            <div class="detalle-wrapper">
+                <div class="switch-editar-container">
+                    <div class="switch-container">
+                        <div class="switch-wrapper">
+                            <span class="switch-btn-container">
+                                <span class="switch-btn"></span>
+                            </span>
+
+                            <span class="editar-text">Editar</span>
+                        </div>
+                    </div>
+
+                    <div class="cerrar-detalle-container">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+
+                <div class="detalle-content">
+                    <article class="info-boleta">
+                        <h2>Boleta 1</h2>
+                        <div class="info-content">
+                            <p class="etiqueta nro-boleta-tag">N° Boleta:</p>
+                            <p class="valor nro-boleta-value">152010</p>
+                            <p class="etiqueta fecha-tag">Fecha:</p>
+                            <p class="valor fecha-value">05-01-2025</p>
+                            <p class="etiqueta costo-tag">Costo:</p>
+                            <p class="valor costo-value">$3.000</p>
+                            <p class="etiqueta descripcion-tag">Descripción:</p>
+                            <p class="valor descripcion-value">Compra del lunes del super.</p>
+                        </div>
+                    </article>
+
+                    <article class="form-container">
+                        <h2>Actualiza los datos de la boleta.</h2>
+                        <form class="form-editar">
+                            <input type="text" name="titulo" id="titulo" maxlength="30" placeholder="Título" pattern="^(?!\s*$).*$" required/>
+                            <input type="text" name="nro-boleta" id="nro-boleta" placeholder="N° de Boleta" pattern="^(0|[1-9]\d*)$" required/>
+                            <input type="date" name="fecha" id="fecha" required/>
+                            <input type="text" name="costo" id="costo" placeholder="Costo final" pattern="^(0|[1-9]\d*)$" required/>
+                            <input type="text" name="descripcion" id="descripcion" maxlength="50" placeholder="Descripción" pattern="^(?!\s*$).*$"/>
+
+                            <div class="btn-container">
+                                <button class="btn-editar">Editar</button>
+                            </div>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </section>
 
         <dialog>
             <div class="header-modal">

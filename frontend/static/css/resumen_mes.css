@@ -19,7 +19,7 @@ body {
 
 .title-container a {
     display: inline-block;
-    font-size: 45px;
+    font-size: 35px;
     text-decoration: none;
     margin: 30px 0 0 15px;
 }
@@ -116,32 +116,254 @@ body {
 
 .boleta .titulo {
     display: grid;
-    grid-template-columns: 1fr 0.15fr;
+    grid-template-columns: 1fr 0.35fr;
     align-items: center;
     font-size: 1.25rem;
     margin: 10px 0;
 }
 
-.boleta .titulo span {
-    font-weight: bold;
+.boleta .titulo h3 {
+    margin: 0;
 }
 
-.boleta .titulo span a {
-    color: var(--white-app-color);
-    text-decoration: none;
+.boleta .iconos-accion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.boleta .titulo .iconos-accion .fa-solid {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px 8px;
+    border-radius: 10px;
+    background-color: var(--main-light-color);
+}
+
+.boleta .titulo .iconos-accion .fa-solid:hover {
+    background-color: #9d8fff;
+}
+
+.boleta .titulo .fa-arrow-up-right-from-square {
+    color: var(--main-color-app);
 }
 
 .boleta .titulo .fa-trash-can {
-    font-size: 30px;
-    justify-self: end;
-    align-self: center;
     color: var(--button-app-color);
-    cursor: pointer;
 }
 
 .boleta .costo {
     font-weight: bold;
     font-size: 1.25rem;
+}
+
+
+/* Detalle de boleta y formulario para editar boletas */
+.opacity-detalle {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    background-color: #000000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.opacity-on {
+    visibility: visible;
+    opacity: 0.6;
+}
+
+.detalle-boleta-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 12%;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.detalle-on {
+    visibility: visible;
+    opacity: 1;
+}
+
+.detalle-wrapper {
+    background-color: white;
+    margin: 0 17px;
+    padding: 20px 15px 40px;
+    border-radius: 15px;
+}
+
+.switch-editar-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) auto;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.switch-container {
+    display: flex;
+    justify-content: center;
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.switch-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px #b3b3b3 solid;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.switch-btn-container {
+    display: inline-block;
+    position: relative;
+    width: 70px;
+    height: 35px;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: var(--main-color-app);
+}
+
+.switch-btn {
+    position: absolute;
+    background-color: #f9f9f9;
+    left: 0;
+    bottom: 0;
+    top: 15%;
+    transform: translateX(5%);
+    height: 25px;
+    width: 25px;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.switch-on {
+    transform: translateX(170%);
+}
+
+.switch-editar-container .editar-text {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.cerrar-detalle-container {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.cerrar-detalle-container .fa-xmark {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.detalle-content {
+    min-height: 400px;
+    overflow-y: auto;
+}
+
+.info-boleta {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.boleta-hidden {
+    position: absolute;
+    transform: translateX(5%);
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease-in-out;
+}
+
+.info-boleta h2, .form-container h2 {
+    text-align: center;
+    font-size: 32px;
+    margin: 0 0 60px;
+}
+
+.info-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    margin-top: 60px;
+}
+
+.info-content .descripcion-value {
+    grid-area: 5 / 1 / 6 / 3;
+}
+
+.info-content .etiqueta, .info-content .valor {
+    margin: 0;
+}
+
+.info-content p:not(:nth-child(7), :nth-child(8)) {
+    margin-bottom: 30px;
+}
+
+.info-content p:nth-child(7) {
+    margin-bottom: 10px;
+}
+
+.info-content .etiqueta {
+    font-weight: bold;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-5%);
+    transition: opacity 0.7s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.form-open {
+    position: relative;
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-editar input, .form-editar button {
+    display: block;
+    width: stretch;
+    padding: 10px 5px;
+    font-size: 17px;
+}
+
+.form-editar input {
+    border: 1px solid var(--main-color-app);
+    border-radius: 7px;
+    padding: 10px 5px;
+}
+
+.form-editar input:not([name="descripcion"]) {
+    margin-bottom: 15px;
+}
+
+.btn-container {
+    margin: 60px 0;
+}
+
+.btn-container .btn-editar {
+    font-weight: bold;
+    border: 0;
+    border-radius: 30px;
+    padding: 1.25em 0;
+    cursor: pointer;
+    font-family: var(--main-font);
+    background-color: var(--button-app-color);
+    color: var(--white-app-color);
 }
 
 /* Modal de confirmacion para eliminar gastos */
