@@ -13,6 +13,10 @@ body {
 =================
 */
 
+.main-header {
+    background-color: var(--main-light-color);
+}
+
 .title-container {
     background-color: var(--main-color-app);
 }
@@ -40,7 +44,6 @@ body {
 
 /* Contenido del resumen */
 .resumen-container {
-    background-color: var(--main-light-color);
     padding: 60px 15px;
 }
 
@@ -411,8 +414,13 @@ dialog::backdrop {
     color: #838383;
 }
 
+.caja-decision {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 .caja-decision button {
-    width: stretch;
     padding: 15px 20px;
     font-family: var(--main-font-app);
     font-weight: bold;
@@ -434,6 +442,58 @@ dialog::backdrop {
     background-color: var(--white-app-color);
     border: 1px #b1b1b1 solid;
     color: #515151;
-    margin: 0 0 15px 0;
 }
 
+
+
+/*
+==================================================
+    Media query para pantallas de Escritorio
+==================================================
+*/
+@media (min-width: 992px) {
+    .main-header {
+        padding: 30px 0 60px;
+        background-color: var(--main-light-color);
+    }
+
+    .title-container {
+        background-color: var(--main-color-app);
+        margin: 0 100px 30px;
+        border-radius: 10px;
+    }
+
+    .resumen-container {
+        padding: 0 100px;
+    }
+
+    .resumen-body {
+        margin: 120px 100px;
+        padding: 0;
+    }
+
+    .boletas-container {
+        margin: 0 100px;
+    }
+
+    .boleta .iconos-accion {
+        justify-content: flex-end;
+    }
+
+    .boletas-container h2 {
+        padding: 70px 0;
+    }
+
+    .listado-boletas {
+        margin-bottom: 70px;
+    }
+
+    .detalle-boleta-container {
+        top: 2%;
+    }
+
+    .detalle-wrapper {
+        margin: 0 300px;
+        padding: 40px 100px 40px;
+    }
+}
