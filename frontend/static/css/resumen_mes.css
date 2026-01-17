@@ -131,19 +131,26 @@ body {
 
 .boleta .iconos-accion {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
-.boleta .titulo .iconos-accion .fa-solid {
-    font-size: 25px;
+.iconos-accion .icono {
     cursor: pointer;
     padding: 10px 8px;
     border-radius: 10px;
     background-color: var(--main-light-color);
 }
 
-.boleta .titulo .iconos-accion .fa-solid:hover {
+.iconos-accion .icono-abrir {
+    margin-right: 10px;
+}
+
+.iconos-accion .icono:hover {
     background-color: #9d8fff;
+}
+
+.iconos-accion .fa-solid {
+    font-size: 25px;
 }
 
 .boleta .titulo .fa-arrow-up-right-from-square {

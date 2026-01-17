@@ -29,7 +29,7 @@ const switchContainer = document.querySelector(".switch-btn-container"),
       switchBtn = document.querySelector(".switch-btn"),
       infoBoleta = document.querySelector(".info-boleta"),
       formEditar = document.querySelector(".form-container");
-      openDetalleBtn = document.querySelector(".fa-arrow-up-right-from-square"),
+      openDetalleBtn = document.querySelector(".icono-abrir"),
       opacityContainer = document.querySelector(".opacity-detalle"),
       detalleContainer = document.querySelector(".detalle-boleta-container");
 
@@ -102,7 +102,7 @@ const confirmarEliminar = (event) => {
 
 boletaContainers.forEach(
     (boleta) => {
-        const abrirModalBtn = boleta.querySelector(".fa-trash-can");
+        const abrirModalBtn = boleta.querySelector(".icono-eliminar");
         abrirModalBtn.addEventListener("click", () => abrirModalEliminar(boleta));
     }
 );
