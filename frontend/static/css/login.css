@@ -1,6 +1,6 @@
 /* Diseno pagina de login */
 /* rem: para font-size; em: para padding/margin */
-@import url("variables.css");
+@import url("globals.css");
 
 body {
     margin: 0;

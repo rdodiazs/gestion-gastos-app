@@ -1,6 +1,13 @@
-/* Aqui se definen las custom properties usadas habitualmente */
+/*
+=================================================================
+    Archivo de definición de valores globales para las vistas
+=================================================================
+*/
+
+/* Importacion de Google Font 'Inter' */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* Definicion de custom properties */
 :root {
     --main-color-app: #3F3C9C;
     --main-light-color: #8D7FE9;
@@ -12,6 +19,7 @@
     --container-border: 1px #e3e3e3 solid;
 }
 
+/* Definicion de propiedades para selector universal */
 *, *::before, *::after {
     box-sizing: border-box;
 }
