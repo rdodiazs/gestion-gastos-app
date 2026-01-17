@@ -7,5 +7,7 @@
     --button-app-color: #D14D49;
     --white-app-color: #F8F8FF;
     --placeholder-color: #A9A9A9;
+    --body-bg-color: #F9F9F9;
     --main-font: "Inter", sans-serif;
+    --container-border: 1px #e3e3e3 solid;
 }

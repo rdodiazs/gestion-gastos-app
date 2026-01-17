@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: var(--main-font);
-    background-color: #f9f9f9;
+    background-color: var(--body-bg-color);
 }
 
 /*
@@ -159,7 +159,7 @@ body {
     margin: 15px;
     padding: 0 15px 4.50em;
     background-color: #ffffff;
-    border: 1px #e3e3e3 solid;
+    border: var(--container-border);
 }
 
 .body-content > h2, .body-content ul {
