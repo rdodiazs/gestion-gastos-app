@@ -189,23 +189,25 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    top: 12%;
+    top: 0;
     overflow-y: auto;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 
-.detalle-on {
-    visibility: visible;
-    opacity: 1;
-}
-
 .detalle-wrapper {
+    position: relative;
+    top: 12%;
     background-color: white;
     margin: 0 17px;
     padding: 20px 15px 40px;
     border-radius: 15px;
+}
+
+.detalle-on {
+    visibility: visible;
+    opacity: 1;
 }
 
 .switch-editar-container {
@@ -495,11 +497,8 @@ dialog::backdrop {
         margin-bottom: 70px;
     }
 
-    .detalle-boleta-container {
-        top: 2%;
-    }
-
     .detalle-wrapper {
+        top: 2%;
         margin: 0 300px;
         padding: 40px 100px 40px;
     }

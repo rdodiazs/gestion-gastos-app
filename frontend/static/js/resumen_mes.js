@@ -28,7 +28,7 @@ mostrarCostoTotal(); // Se muestra el costo total al iniciar/refrescar la pagina
 const switchContainer = document.querySelector(".switch-btn-container"),
       switchBtn = document.querySelector(".switch-btn"),
       infoBoleta = document.querySelector(".info-boleta"),
-      formEditar = document.querySelector(".form-container");
+      formEditar = document.querySelector(".form-container"),
       openDetalleBtn = document.querySelector(".icono-abrir"),
       opacityContainer = document.querySelector(".opacity-detalle"),
       detalleContainer = document.querySelector(".detalle-boleta-container");
