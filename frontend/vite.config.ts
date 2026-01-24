@@ -1,9 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    tailwindcss()
+  ],
   // Este subobject 'server' debe agregarse para que el servidor
   // de Vite funcione desde Docker hacia nuestro navegador
   // Para mas info, revisar:
