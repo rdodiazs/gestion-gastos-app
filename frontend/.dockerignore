@@ -1,0 +1,30 @@
+# Carpetas y archivos a ignorar en la creacion de la imagen
+node_modules
+static
+.gitignore
+.git
+Dockerfile
+.dockerignore
+
+# Estos son los mismos que estan en el .gitignore de esta carpeta (se agregan a modo de precaucion)
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+dist
+dist-ssr
+*.local
+
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
