@@ -1,1 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "@fortawesome/fontawesome-free/css/all.min.css" layer(vendor);
 @import "tailwindcss";
+
+@theme {
+    --font-sans: "Inter", sans-serif;
+    --color-main-app: #3F3C9C;
+    --color-main-app-500: #8D7FE9;
+    --color-main-app-light: #D1CEE6;
+    --color-red-btn: #D14D49;
+    --color-red-btn-light: #D15955;
+    --color-white-secondary: #F8F8FF;
+    --color-body-app: #F9F9F9;
+    --color-gray-container: #E3E3E3;
+}
+
+@layer base {
+    body {
+        @apply bg-body-app;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply block w-[stretch] text-[1.125rem] font-bold text-white-secondary rounded-[35px] bg-red-btn py-[22.5px] cursor-pointer transition-colors duration-100
+    }
+
+    .btn-primary:hover {
+        @apply bg-red-btn-light
+    }
+}
+
+@utility grid-temp-cols-* {
+    grid-template-columns: repeat(--value(integer),1fr);
+}
+
+/* 
+    Forma recomendada para clases usadas con prefijos de breakpoints de pantalla (no funcionan en capa 'components').
+    Ademas, el creador de Tailwind es contrario al uso del directivo '@apply'.
+    Mas info en: https://github.com/tailwindlabs/tailwindcss/discussions/16619
+*/
+@utility main-container {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-gray-container);
+    background-color: var(--color-white);
+}
