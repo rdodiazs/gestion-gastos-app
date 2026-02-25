@@ -6,7 +6,6 @@ interface InputBoletaProps {
     label: string;
     placeholder?: string;
     type: HTMLInputTypeAttribute;
-    value?: string;
 
     // El tipo 'UseFormRegisterReturn' es el retornado por la funcion 'register' y representa
     // las propiedades que se pasan a un 'input'.
@@ -17,7 +16,7 @@ interface InputBoletaProps {
     errorMsg?: string;
 };
 
-const InputBoleta = ({id, label, placeholder, type, value, register, errorMsg}: InputBoletaProps) => {
+const InputBoleta = ({id, label, placeholder, type, register, errorMsg}: InputBoletaProps) => {
     return(
         <div className="mb-[15px]">
             <div className="relative">
@@ -26,7 +25,6 @@ const InputBoleta = ({id, label, placeholder, type, value, register, errorMsg}: 
                     id={id}
                     placeholder={placeholder}
                     type={type}
-                    value={value}
                     className={`block peer ${!errorMsg && "border-b border-main-app-light"} outline-none w-[stretch] py-[10px]`}
                     {...register}
                 />
