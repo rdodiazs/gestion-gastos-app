@@ -1,7 +1,8 @@
 import { useState } from "react";
-import HeaderHome from "../components/HeaderHome";
+import ContainerBoleta from "../components/ContainerBoleta";
 import DarkScreen from "../components/DarkScreen";
 import FormBoleta from "../components/FormBoleta";
+import HeaderHome from "../components/HeaderHome";
 import Toast from "../components/Toast";
 
 const Home = () => {
@@ -77,7 +78,9 @@ const Home = () => {
             </main>
 
             {/* Formulario para agregar boletas */}
-            <FormBoleta openForm={openForm} handleCloseForm={handleClose} setToast={handleToast} />
+            <ContainerBoleta openContainer={openForm} handleClose={handleClose} titulo="Ingresa tu boleta">
+                <FormBoleta setToast={handleToast} />
+            </ContainerBoleta>
 
             {/* Toast Formulario */}
             <Toast isActive={toastActive} message="La boleta ha sido ingresada exitosamente"/>
