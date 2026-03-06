@@ -38,6 +38,13 @@ const SidebarMenuHome = ({navItems, openMenu, handleCloseSidebar}: SidebarMenuHo
                     </div>
                 </div>
             </nav>
+
+            {/* Pantalla oscura (se cierra al darle 'click') */}
+            <div
+                className={`fixed -z-0 top-0 w-full ${openMenu ? "opacity-50 h-full" : "opacity-0"} bg-black transition-opacity duration-200 ease-in-out`}
+                onClick={handleCloseSidebar}
+            >
+            </div>
         </>
     );
 };

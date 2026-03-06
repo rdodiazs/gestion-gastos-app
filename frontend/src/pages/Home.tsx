@@ -1,37 +1,33 @@
-import { useState } from "react";
-import ContainerBoleta from "../components/ContainerBoleta";
-import DarkScreen from "../components/DarkScreen";
-import FormBoleta from "../components/FormBoleta";
+import { useRef, useState } from "react";
+import ModalBoletaForm from "../components/ModalBoletaForm";
 import HeaderHome from "../components/HeaderHome";
 import Toast from "../components/Toast";
 
 const Home = () => {
     const [openMenu, setOpenMenu] = useState(false),
-          [openForm, setOpenForm] = useState(false),
           [toastActive, setToastActive] = useState(false);
 
-    // Funcion para abrir y cerrar componentes Sidebar o Formulario
-    const handleOpen = (openState: boolean, setOpen: (state: boolean) => void) => {
-        setOpen(!openState);
-    }
+    const formRef = useRef<HTMLDialogElement | null>(null);
 
-    // Funcion para cerrar Sidebar o FormBoleta junto con DarkScreen
-    const handleClose = () => {
-        if(openMenu) {
-            setOpenMenu(false);
+    // Funcion para abrir y cerrar el menu sidebar
+    const handleOpen = () => {
+        setOpenMenu(!openMenu);
+    };
+
+    // Funcion para abrir el modal del formulario para ingresar boletas
+    const openModalForm = () => {
+        if(!formRef.current) {
             return;
-        }
+        };
 
-        else if(openForm) {
-            setOpenForm(false);
-        }
-    }
+        if(!formRef.current.hasAttribute("open")) {
+            formRef.current.showModal();
+        }; 
+    };
 
     // Funcion para gestionar el Toast
     const handleToast = () => {
         setToastActive(!toastActive);
-
-        setTimeout(() => setToastActive(false), 2000);
     }
 
     // Datos ficticios que se obtendran despues desde la API REST
@@ -41,7 +37,7 @@ const Home = () => {
     return(
         <div>
             {/* Header */}
-            <HeaderHome openMenu={openMenu} handleMenu={() => handleOpen(openMenu, setOpenMenu)} />
+            <HeaderHome openMenu={openMenu} handleMenu={handleOpen} />
 
             {/* Contenido de la vista home */}
             <main className="m-[15px] lg:my-[44px] lg:mx-[11.1%] px-[15px] pb-[2.25em] lg:px-[55px] lg:pb-0 main-container">
@@ -69,7 +65,7 @@ const Home = () => {
                     <div className="flex justify-center pb-[3.75rem]">
                         <button
                             className="btn-primary lg:w-[40%]"
-                            onClick={() => handleOpen(openForm, setOpenForm)}
+                            onClick={openModalForm}
                         >
                             Ingresar Boleta
                         </button>
@@ -78,15 +74,10 @@ const Home = () => {
             </main>
 
             {/* Formulario para agregar boletas */}
-            <ContainerBoleta openContainer={openForm} handleClose={handleClose} titulo="Ingresa tu boleta">
-                <FormBoleta setToast={handleToast} />
-            </ContainerBoleta>
+            <ModalBoletaForm ref={formRef} handleToast={handleToast} />
 
             {/* Toast Formulario */}
-            <Toast isActive={toastActive} message="La boleta ha sido ingresada exitosamente"/>
-
-            {/* Pantalla opaca oscura */}
-            <DarkScreen openScreen={openMenu || openForm} handleCloseScreen={handleClose} />
+            <Toast isActive={toastActive} onActive={handleToast} message="La boleta ha sido ingresada exitosamente"/>
         </div>
     );
 }
