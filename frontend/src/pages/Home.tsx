@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import ModalBoletaForm from "../components/ModalBoletaForm";
 import HeaderHome from "../components/HeaderHome";
 import Toast from "../components/Toast";
+import CardMesBoleta from "../components/CardMesBoleta";
 
 const Home = () => {
     const [openMenu, setOpenMenu] = useState(false),
@@ -49,9 +50,7 @@ const Home = () => {
                     {meses.length > 0 ?
                         <ul className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-x-[20px] gap-y-[20px] text-[1.125rem]">
                             {meses.map((mes, index) => (
-                                <li key={index} className="text-center font-bold py-[32.5px] rounded-[12px] text-white-secondary bg-main-app-500 cursor-pointer">
-                                    <span>{mes}</span>
-                                </li>
+                                <CardMesBoleta key={index} mesAnio={mes} />
                             ))}
                         </ul>
 
