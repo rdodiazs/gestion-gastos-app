@@ -1,12 +1,12 @@
 import type { BoletaResponse } from "../types/boletaResponse";
 
-interface BoletaResumenProps {
+interface CardBoletaResumenProps {
     boleta: BoletaResponse;
     openBoleta: () => void;
     openDelete: () => void;
 };
 
-const BoletaResumen = ({boleta, openBoleta, openDelete}: BoletaResumenProps) => {
+const CardBoletaResumen = ({boleta, openBoleta, openDelete}: CardBoletaResumenProps) => {
     return(
         <article className="bg-main-app-500 py-3 px-4 border border-main-app rounded-xl not-last:mb-4">
             <p>{boleta.fechaBoleta}</p>
@@ -39,4 +39,4 @@ const BoletaResumen = ({boleta, openBoleta, openDelete}: BoletaResumenProps) => 
     );
 };
 
-export default BoletaResumen;
+export default CardBoletaResumen;

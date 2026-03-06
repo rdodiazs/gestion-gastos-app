@@ -4,7 +4,7 @@ import ModalBoletaForm from "../components/ModalBoletaForm";
 import Toast from "../components/Toast";
 import ModalDelete from "../components/ModalDelete";
 import HeaderResumenMes from "../components/HeaderResumenMes";
-import BoletaResumen from "../components/BoletaResumen";
+import CardBoletaResumen from "../components/CardBoletaResumen";
 
 const ResumenMes = () => {
     const [boletaData, setBoletaData] = useState<BoletaResponse>();
@@ -89,7 +89,7 @@ const ResumenMes = () => {
                     {/* Listado de boletas ingresadas */}
                     <div className="mb-13 lg:mb-18 text-white-secondary">
                         {boletas.map((boleta) => (
-                            <BoletaResumen
+                            <CardBoletaResumen
                                 boleta={boleta}
 
                                 // 'key' es un prop especial que se usa obligadamente cuando un elemento
