@@ -6,12 +6,13 @@
     --font-sans: "Inter", sans-serif;
     --color-main-app: #3F3C9C;
     --color-main-app-500: #8D7FE9;
+    --color-main-app-400: #9D8FFF;
     --color-main-app-light: #D1CEE6;
     --color-red-btn: #D14D49;
     --color-red-btn-light: #D15955;
     --color-white-secondary: #F8F8FF;
     --color-body-app: #F9F9F9;
-    --color-gray-container: #E3E3E3;
+    --color-gray-container: #D1D1D1;
 }
 
 @layer base {

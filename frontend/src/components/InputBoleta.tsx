@@ -1,46 +1,70 @@
 import type { HTMLInputTypeAttribute } from "react";
-import type { UseFormRegisterReturn } from "react-hook-form";
+import { useController, type FieldValues, type UseControllerProps } from "react-hook-form";
 
-interface InputBoletaProps {
+/*
+    Se utilizan 'tipos genericos' para definir la interfaz y el
+    componente funcional. Para entender sobre ese tema, recomiendo
+    revisar los siguientes articulos:
+
+    - https://www.freecodecamp.org/news/how-typescript-generics-work/
+    - https://www.typescriptlang.org/docs/handbook/2/generics.html
+*/
+
+// Con la palabra clave 'extends' se estan incorporando todos
+// los atributos de 'UseControllerProps' a 'InputBoletaProps'
+interface InputBoletaProps<T extends FieldValues> extends UseControllerProps<T> {
     id: string;
     label: string;
+    type?: HTMLInputTypeAttribute
     placeholder?: string;
-    type: HTMLInputTypeAttribute;
-
-    // El tipo 'UseFormRegisterReturn' es el retornado por la funcion 'register' y representa
-    // las propiedades que se pasan a un 'input'.
-    // En cambio, el tipo 'UseFormRegister' es una funcion y por eso no sirve usarla aca.
-    // En los docs no se menciona, pero si se puede ver en el codigo fuente:
-    // https://github.com/react-hook-form/react-hook-form/blob/master/src/types/form.ts
-    register: UseFormRegisterReturn<string>; 
     errorMsg?: string;
+    disabled?: boolean;
 };
 
-const InputBoleta = ({id, label, placeholder, type, register, errorMsg}: InputBoletaProps) => {
+const InputBoleta = <T extends FieldValues>({
+    id,
+    label,
+    type,
+    placeholder,
+    errorMsg,
+    disabled,
+    name,
+    control,
+    rules
+}: InputBoletaProps<T>) => {
+
+    const {field} = useController({name, control, rules});
+
     return(
-        <div className="mb-[15px]">
+        <div className="mb-4">
             <div className="relative">
                 <label htmlFor={id} className="font-bold">{label}</label>
                 <input
                     id={id}
+                    name={field.name}
                     placeholder={placeholder}
                     type={type}
-                    className={`block peer ${!errorMsg && "border-b border-main-app-light"} outline-none w-[stretch] py-[10px]`}
-                    {...register}
+                    className={`block peer ${!disabled && "border-b border-main-app-light"} outline-none w-[stretch] py-[10px]`}
+                    disabled={disabled}
+                    value={field.value || ""}
+                    onChange={field.onChange}
                 />
-
+            
                 {/* Subrayado debajo del input */}
-                <div className={`before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[1.2px] ${!errorMsg ? "before:bg-main-app" : "before:bg-red-btn"} peer-focus:before:w-full before:transition-[width] before:duration-400 before:ease-in-out`}></div>
+                <div
+                    className={`before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] ${!errorMsg ? "before:bg-main-app" : "before:bg-red-btn" } peer-focus:before:w-full before:transition-[width] before:duration-400 before:ease-in-out`}
+                ></div>
+            
             </div>
 
-            {/* Mensaje de error por input invalido */}
-            {errorMsg &&
-                (<div className="bg-red-200 py-2 pl-1">
+            {/* Mensaje de error */}
+            {errorMsg && (
+                <div className="bg-red-200 py-2 pl-1">
                     <p className="text-sm text-red-btn">
                         <i className="fa-solid fa-triangle-exclamation"></i> {errorMsg}
                     </p>
-                </div>)
-            }
+                </div>
+            )}
         </div>
     );
 };
